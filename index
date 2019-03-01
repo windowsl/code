@@ -1,0 +1,19 @@
+ <!DOCTYPE html>
+<html>
+<body>
+
+<h1>FROM python:latest</h1>
+<h1>COPY index.html .</h1>
+<h1>EXPOSE 80</h1>
+<h1>CMD [ "python", "-m", "http.server", "80" ]</h1>
+
+
+<h1>FROM alpine:latest</h1>
+<h1>RUN apk add --update curl && \
+	rm -rf /var/cache/apk/*</h1>
+<h1>ENTRYPOINT ["/usr/bin/curl"]</h1>
+
+<p>great</p>
+
+</body>
+</html> 
